@@ -1,0 +1,49 @@
+/* NavBar.css */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem;
+    height: 5rem;
+    background-color: var(--main-color);
+    color: white;
+}
+
+.title {
+    font-size: 18px;
+    text-shadow: 2px 3px 2px black;
+}
+
+.navigation a{
+    text-decoration: none;
+    font-size: 18px;
+    margin: 15px;
+    padding: 10px;
+    text-transform: uppercase;
+    color: var(--white-color);
+    transition: 0.8s;
+}
+
+.navigation a:hover {
+    background-color: var(--white-color);
+    color: var(--black-color);
+    border-radius: 20px;
+}
+
+
+/* Responsividade */
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+    }
+
+    .navigation ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+
+    .navigation li {
+        margin: 10px 0;
+    }
+}
