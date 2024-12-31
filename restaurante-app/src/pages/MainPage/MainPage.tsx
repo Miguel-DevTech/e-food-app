@@ -37,8 +37,9 @@ function MainPage() {
                         <img src={category.image} alt={category.name} />
                         <h2>{category.name}</h2>
                         <p>{category.description}</p>
-                        <Link to={`/categoria/${category.name.toLowerCase()}`}></Link>
-                        <button>Ver Mais</button>
+                        <Link to={`/categoria/${category.name.toLowerCase()}`}>
+                            <button>Ver Mais</button>
+                        </Link>
                     </div>
                 ))}
             </div>

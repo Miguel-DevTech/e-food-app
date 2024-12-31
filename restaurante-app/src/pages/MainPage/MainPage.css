@@ -29,9 +29,10 @@
     width: 280px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Aumentei um pouco o box-shadow */
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
+    margin-bottom: 20px; /* Distância entre os cards */
 }
 
 .card:hover {
@@ -59,6 +60,7 @@
     text-align: center;
 }
 
+/* Estilos para o botão */
 .card button {
     display: block;
     margin: 15px auto 10px;
@@ -69,9 +71,19 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .card button:hover {
     background-color: #e64a19;
+    transform: scale(1.05); /* Pequeno aumento no botão ao passar o mouse */
+}
+
+/* Remover decoração do Link */
+.card a {
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+.card a:hover button {
+    background-color: #e64a19; /* Garantir que o botão também muda de cor no hover */
 }

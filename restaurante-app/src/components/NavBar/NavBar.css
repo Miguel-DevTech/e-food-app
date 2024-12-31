@@ -3,7 +3,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 3rem;
+    padding: 1rem 2rem;  /* Ajuste o padding para telas pequenas */
     height: 5rem;
     background-color: var(--main-color);
     color: white;
@@ -14,7 +14,13 @@ header {
     text-shadow: 2px 3px 2px black;
 }
 
-.navigation a{
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation a {
     text-decoration: none;
     font-size: 18px;
     margin: 15px;
@@ -30,20 +36,54 @@ header {
     border-radius: 20px;
 }
 
+/* Menu hambúrguer (quando em tela pequena) */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+}
 
 /* Responsividade */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+    /* Alinhar a navbar em coluna para telas pequenas */
     header {
-        flex-direction: column;
+        flex-direction: row;
+        padding: 1rem;  /* Reduzir o padding em telas pequenas */
     }
 
-    .navigation ul {
-        flex-direction: column;
+    .navigation {
+        display: none; /* O menu estará oculto por padrão */
         width: 100%;
-        padding: 0;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1rem;
     }
 
-    .navigation li {
+    .navigation.active {
+        display: flex;  /* Mostrar o menu quando a classe 'active' for adicionada */
+        flex-direction: column;
+        
+    }
+
+    .navigation a {
         margin: 10px 0;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .menu-toggle {
+        display: block;  /* Mostrar o ícone de hambúrguer */
+    }
+}
+
+/* Responsividade adicional para telas menores */
+@media (max-width: 480px) {
+    .title {
+        font-size: 16px;
+    }
+
+    .navigation a {
+        font-size: 14px;
     }
 }

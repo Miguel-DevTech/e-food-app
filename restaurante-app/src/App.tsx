@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Importando React Router
 import NavBar from './components/NavBar/NavBar';
 import MainPage from './pages/MainPage/MainPage';
-import CategoriaPage from './components/CategoryPages/CategoryPage';
+import CategoryPage from './components/CategoryPages/CategoryPage.tsx';
 import './mainStyles/App.css';
 
 function App() {
@@ -12,8 +12,14 @@ function App() {
 
       {/* Definição das rotas */}
       <Routes>
-        <Route path="/" element={<MainPage />} /> {/* Página principal com os cards */}
-        <Route path="/categoria/:category" element={<CategoriaPage />} /> {/* Página da categoria */}
+          <Route path="/" 
+          element={<MainPage />} 
+        /> {/* Página principal com os cards */}
+
+          <Route path="/categoria/:category" 
+          element={<CategoryPage />} 
+        /> {/* Página da categoria */}
+
       </Routes>
     </Router>
   );
