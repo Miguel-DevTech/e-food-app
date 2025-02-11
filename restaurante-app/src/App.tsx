@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Importando React Router
 import NavBar from './components/NavBar/NavBar';
 import MainPage from './pages/MainPage/MainPage';
-import CategoryPage from './components/CategoryPages/CategoryPage.tsx';
+import CategoryPage from './pages/CategoryPages/CategoryPage.tsx';
 import './mainStyles/App.css';
 
 function App() {

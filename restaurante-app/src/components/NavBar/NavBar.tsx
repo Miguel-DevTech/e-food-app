@@ -1,7 +1,8 @@
-import { useState } from 'react';
-import './NavBar.css';
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import "./Navbar.css";
 
-function NavBar() {
+function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -9,23 +10,50 @@ function NavBar() {
     };
 
     return (
-        <header>
-            <div className="title">
-                <h1>E-FOOD</h1>
-            </div>
+        <nav className="navbar navbar-expand-lg fixed-top">
+            <div className="container">
+                {/* Logo */}
+                <Link className="navbar navbar-brand" to="/">
+                    <h1>E-FOOD</h1>
+                </Link>
 
-            <div className={`navigation ${isMenuOpen ? 'active' : ''}`}>
-                <a href="/">Início</a>
-                <a href="/cardapio">Cardápio</a>
-                <a href="/pedidos">Pedidos</a>
-                <a href="/sobre">Sobre</a>
-            </div>
+                {/* Botão do Menu Mobile */}
+                <button 
+                    className="navbar-toggler" 
+                    type="button" 
+                    onClick={toggleMenu}
+                    aria-controls="navbarNav"
+                    aria-expanded={isMenuOpen}
+                    aria-label="Toggle navigation"
+                >
+                    <span className="navbar-toggler-icon"></span>
+                </button>
 
-            <div className="menu-toggle" onClick={toggleMenu}>
-                ☰
+                {/* Links do Menu */}
+                <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`} id="navbarNav">
+                    <ul className="navbar-nav mx-auto">
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/">Início</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/cardapio">Cardápio</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/pedidos">Pedidos</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/sobre">Sobre</Link>
+                        </li>
+                    </ul>
+                </div>
+
+                {/* Botão do Carrinho/Pedidos */}
+                <Link className="btn btn-danger" to="/pedidos">
+                    🛒 Meus Pedidos
+                </Link>
             </div>
-        </header>
+        </nav>
     );
 }
 
-export default NavBar;
+export default Navbar;

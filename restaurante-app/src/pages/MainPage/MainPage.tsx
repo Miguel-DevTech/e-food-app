@@ -1,45 +1,50 @@
-import { Link } from 'react-router-dom';
+import MainCard from '../../components/MainCard/MainCard';
 import './MainPage.css';
 
 function MainPage() {
-    // Categorias de comida
     const categories = [
         {
             id: 1,
             name: "Lanches",
             description: "Os melhores hambúrgueres e batatas fritas!",
-            image: "/hamburguer.webp" // Caminho da imagem
+            image: "/hamburguer.webp",
+            link: "/categoria/lanches",
         },
         {
             id: 2,
             name: "Bebidas",
             description: "Refrigerantes, sucos e mais para refrescar seu dia.",
-            image: "/Refrigerante-1.jpg", // Caminho da imagem
+            image: "/Refrigerante-1.jpg",
+            link: "/categoria/bebidas",
         },
         {
             id: 3,
             name: "Sobremesas",
             description: "Sobremesas deliciosas para adoçar sua refeição.",
-            image: "/sobremesas.avif", // Caminho da imagem
+            image: "/sobremesas.avif",
+            link: "/categoria/sobremesas",
         },
     ];
 
     return (
-        <main>
-            <div className="main-title">
-                <h1>Bem-vindo ao E-FOOD</h1>
-                <p>Escolha uma categoria e explore nosso cardápio!</p>
+        <main className="container">
+            {/* Título Principal */}
+            <div className="text-center mb-5">
+                <h1 className="display-4 fw-bold text-light">Bem-vindo ao E-FOOD</h1>
+                <p className="lead text-light">Escolha uma categoria e explore nosso cardápio!</p>
             </div>
 
-            <div className="categories">
+            {/* Grid de Categorias - Lado a Lado */}
+            <div className="row d-flex flex-wrap justify-content-center g-4">
                 {categories.map((category) => (
-                    <div className="card" key={category.id}>
-                        <img src={category.image} alt={category.name} />
-                        <h2>{category.name}</h2>
-                        <p>{category.description}</p>
-                        <Link to={`/categoria/${category.name.toLowerCase()}`}>
-                            <button>Ver Mais</button>
-                        </Link>
+                    <div className="col-12 col-sm-6 col-md-4 d-flex" key={category.id}>
+                        <MainCard 
+                            id={category.id}
+                            name={category.name}
+                            description={category.description}
+                            image={category.image}
+                            link={category.link}
+                        />
                     </div>
                 ))}
             </div>
