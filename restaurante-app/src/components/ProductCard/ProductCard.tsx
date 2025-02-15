@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useOrder } from "../../context/OrderContext"; // Importando o contexto
 
 interface ProductCardProps {
     id: number;
@@ -7,29 +7,34 @@ interface ProductCardProps {
     price: string;
     image: string;
     link: string;
-    category: string; // Para personalizar o botão conforme a categoria
+    category: string;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ name, description, price, image, link, category }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ id, name, description, price, image, link, category }) => {
+    const { addToOrder } = useOrder(); // Obtendo a função para adicionar pedidos
+
+    const handleAddToOrder = () => {
+        addToOrder({ id, name, price, image, quantity: 1 });
+    };
+
     const buttonText = category === "lanches" || category === "bebidas" ? "Adicionar aos pedidos" : "Ver Mais";
 
     return (
-        <div className="col">
-            <div className="card shadow-lg rounded-4 overflow-hidden h-100 d-flex flex-column">
-                <img
-                    src={image}
-                    className="card-img-top"
-                    alt={`Imagem do produto ${name}`}
-                    style={{ height: "200px", objectFit: "cover" }}
-                />
-                <div className="card-body d-flex flex-column justify-content-between text-center">
-                    <h5 className="card-title text-dark fw-semibold">{name}</h5>
-                    <p className="card-text text-muted">{description}</p>
-                    <p className="price fw-bold text-danger">{price}</p>
-                    
-                    <Link to={link} className="btn btn-danger mt-auto">
-                        {buttonText}
-                    </Link>
+        <div className="col" key={id}>
+            <div className="card d-flex flex-column shadow-lg rounded-4 overflow-hidden h-100">
+                <img src={image} className="card-img-top" alt={name} style={{ height: "200px", objectFit: "cover" }} />
+                <div className="card-body d-flex flex-column justify-content-between">
+                    <h5 className="card-title text-dark fw-semibold text-center">{name}</h5>
+                    <p className="card-text text-muted text-center">{description}</p>
+                    <h5 className="card-title text-dark fw-semibold text-center">{price}</h5>
+
+                    {category === "lanches" || category === "bebidas" ? (
+                        <button className="btn btn-danger mx-auto mt-auto" onClick={handleAddToOrder}>
+                            {buttonText}
+                        </button>
+                    ) : (
+                        <a href={link} className="btn btn-danger mx-auto mt-auto">{buttonText}</a>
+                    )}
                 </div>
             </div>
         </div>
