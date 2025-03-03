@@ -1,0 +1,71 @@
+/* Estilização da tabela */
+.table {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px;
+}
+
+.table td:hover {
+    cursor: pointer;
+}
+
+/* Ajustando o tamanho das imagens */
+.menu-image {
+    max-width: 80px;  /* Definição de largura */
+    height: auto; /* Definição de altura */
+    object-fit: cover; /* Mantém o aspecto da imagem */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Botão estilizado */
+.btn-success {
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .table thead {
+        display: none;
+    }
+    
+    .table, .table tbody, .table tr, .table td {
+        display: block;
+        width: 100%;
+    }
+
+    .table tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        padding: 10px;
+    }
+
+    .table td {
+        text-align: center;
+        position: relative;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}

@@ -1,8 +1,14 @@
 .navbar {
-    background-color: rgb(255, 56, 103);
+    background-color: rgb(255, 105, 140);
     color: white;
 }
 
-.ul {
+.nav-link {
     color: white;
+    text-transform: uppercase;
+    transition: 0.6s;
+}
+
+.nav-link:hover {
+    color: black;
 }

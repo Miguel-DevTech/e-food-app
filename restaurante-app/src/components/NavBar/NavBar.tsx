@@ -31,7 +31,7 @@ function Navbar() {
 
                 {/* Links do Menu */}
                 <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`} id="navbarNav">
-                    <ul className="navbar-nav mx-auto">
+                    <ul className="navbar-nav mx-auto ">
                         <li className="nav-item">
                             <Link className="nav-link" to="/">Início</Link>
                         </li>
@@ -39,18 +39,13 @@ function Navbar() {
                             <Link className="nav-link" to="/cardapio">Cardápio</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/pedidos">Pedidos</Link>
+                            <Link className="nav-link btn btn-danger text-light px-3"  to="/pedidos">Meus Pedidos 🛒</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/sobre">Sobre</Link>
                         </li>
                     </ul>
                 </div>
-
-                {/* Botão do Carrinho/Pedidos */}
-                <Link className="btn btn-danger" to="/pedidos">
-                    🛒 Meus Pedidos
-                </Link>
             </div>
         </nav>
     );

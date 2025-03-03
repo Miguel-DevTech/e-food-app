@@ -1,4 +1,5 @@
-import { useOrder } from "../../context/OrderContext"; // Importando o contexto
+import { useToast } from "../../context/ToastContext/ToastContext"; 
+import { useOrder } from "../../context/OrderContext";  
 
 interface ProductCardProps {
     id: number;
@@ -12,12 +13,14 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ id, name, description, price, image, link, category }) => {
     const { addToOrder } = useOrder(); // Obtendo a função para adicionar pedidos
+    const { triggerToast } = useToast();
 
     const handleAddToOrder = () => {
         addToOrder({ id, name, price, image, quantity: 1 });
+        triggerToast(`${name} adicionado aos pedidos!`);
     };
 
-    const buttonText = category === "lanches" || category === "bebidas" ? "Adicionar aos pedidos" : "Ver Mais";
+    const buttonText = category === "lanches" || category === "bebidas" || category === "sobremesas" ? "Adicionar aos pedidos" : "Ver mais";
 
     return (
         <div className="col" key={id}>
