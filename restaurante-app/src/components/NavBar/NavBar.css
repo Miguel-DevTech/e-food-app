@@ -1,14 +1,119 @@
+/* Estilo Geral da Navbar */
 .navbar {
-    background-color: rgb(255, 105, 140);
+    background-color: rgb(255, 42, 92);
     color: white;
 }
 
-.nav-link {
-    color: white;
+/* Estilo dos Botões da Navbar */
+.nav-link.btn {
+    background-color: rgb(255, 255, 255);
     text-transform: uppercase;
     transition: 0.6s;
+    border-radius: 30px;
+    font-weight: 600;
 }
 
-.nav-link:hover {
-    color: black;
+/* Efeito de Hover nos Botões */
+.nav-link.btn:hover {
+    background-color: #f8f9fa; /* Cor de fundo quando o botão for hover */
+    color: #343a40; /* Cor do texto ao passar o mouse */
+    transform: translateY(-2px); /* Leve elevação para efeito de clique */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar um efeito de elevação */
+}
+
+/* Responsividade para telas muito pequenas (320px) */
+@media (max-width: 320px) {
+    .navbar-collapse {
+        padding-top: 10px;  /* Dá um espaçamento no topo do menu */
+        height: auto;
+        max-height: 80vh;  /* Limita a altura do menu */
+    }
+
+    /* Exibição horizontal dos itens da navbar em telas pequenas */
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        justify-content: flex-start; /* Alinha os itens no topo */
+        margin-top: 10px;
+    }
+
+    /* Reduz o tamanho do ícone do menu hamburguer */
+    .navbar-toggler-icon {
+        width: 20px;  /* Diminui o tamanho do ícone */
+        height: 15px; /* Ajusta a altura do ícone */
+    }
+
+    /* Ajusta o tamanho dos botões de navegação */
+    .navbar-nav .nav-link {
+        padding: 8px 12px; /* Ajusta o padding dos botões */
+    }
+
+    /* Ajusta o tamanho dos botões do menu (especialmente para o "Meus Pedidos") */
+    .navbar-nav .nav-link.btn {
+        font-size: 14px;  /* Reduz o tamanho da fonte */
+        padding: 6px 10px; /* Ajusta o padding */
+    }
+
+    /* Ajusta a exibição do menu quando o menu hamburguer estiver aberto */
+    .navbar-collapse {
+        padding-top: 10px;  /* Dá um espaçamento no topo do menu */
+        height: auto;
+    }
+}
+
+/* Responsividade para telas pequenas (375px) */
+@media (max-width: 375px) {
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: flex-start;
+        margin-top: 10px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+
+/* Responsividade para telas pequenas (425px) */
+@media (max-width: 425px) {
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: flex-start;
+        margin-top: 10px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    /* Ajustar o botão "Meus Pedidos" para o tamanho adequado */
+    .navbar-nav .nav-link.btn {
+        font-size: 15px;
+        padding: 8px 12px;
+    }
+}
+
+/* Responsividade para telas maiores que 768px (tablets) */
+@media (min-width: 768px) {
+    .navbar-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center; /* Alinha os itens da navbar ao centro */
+    }
+
+    .navbar-toggler {
+        display: none; /* Remove o menu hamburguer */
+    }
+    
+    .navbar-collapse {
+        display: flex; /* Exibe os itens da navbar diretamente */
+        justify-content: flex-start; /* Organiza os itens à esquerda */
+    }
 }

@@ -10,45 +10,47 @@ function Navbar() {
     };
 
     return (
-        <nav className="navbar navbar-expand-lg fixed-top">
+        <nav className="navbar navbar-expand-lg fixed-top shadow-sm">
             <div className="container">
                 {/* Logo */}
                 <Link className="navbar navbar-brand" to="/">
-                    <h1>E-FOOD</h1>
+                    <h1 className="fw-bold">E-FOOD</h1>
                 </Link>
-
-                {/* Botão do Menu Mobile */}
-                <button 
-                    className="navbar-toggler" 
-                    type="button" 
-                    onClick={toggleMenu}
-                    aria-controls="navbarNav"
-                    aria-expanded={isMenuOpen}
-                    aria-label="Toggle navigation"
-                >
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-
+    
+                {/* Botão do Menu Mobile, só aparece abaixo de 768px */}
+                    <button 
+                        className="navbar-toggler d-block d-lg-none" 
+                        type="button" 
+                        onClick={toggleMenu}
+                        aria-controls="navbarNav"
+                        aria-expanded={isMenuOpen}
+                        aria-label="Toggle navigation"
+                    >
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+    
                 {/* Links do Menu */}
                 <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`} id="navbarNav">
-                    <ul className="navbar-nav mx-auto ">
+                    <ul className="navbar-nav mx-auto">
                         <li className="nav-item">
-                            <Link className="nav-link" to="/">Início</Link>
+                            <Link className="nav-link btn btn-outline-light mx-2 px-4 py-2 rounded-pill" to="/">Início</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/cardapio">Cardápio</Link>
+                            <Link className="nav-link btn btn-outline-light mx-2 px-4 py-2 rounded-pill" to="/cardapio">Cardápio</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link btn btn-danger text-light px-3"  to="/pedidos">Meus Pedidos 🛒</Link>
+                            <Link className="nav-link btn btn-outline-light mx-2 px-4 py-2 rounded-pill" to="/sobre">Sobre</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/sobre">Sobre</Link>
+                            {/* Botão "Meus Pedidos" para telas maiores */}
+                            <Link className="nav-link btn btn-danger mx-2 px-4 py-2 rounded-pill" to="/pedidos">Meus Pedidos 🛒</Link>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     );
+    
 }
 
 export default Navbar;

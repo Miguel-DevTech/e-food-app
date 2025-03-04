@@ -25,21 +25,25 @@ O **E-Food** é um aplicativo de pedidos de comida online, desenvolvido com **Re
 Para rodar o projeto localmente, siga os passos abaixo:
 
 1. Clone o repositório:
+
    ```bash
    git clone https://github.com/Miguel-DevTech/e-food-app.git
 
 2. Navegue até a pasta do projeto:
+
    ```bash
    cd restaurante-app
    
 3. Instale as dependências do projeto:
+
    ```bash
    npm install
 
 4. Execute o aplicativo:'
+
    ```bash
    npm run dev
 
 5. Abra o navegador e acesse:
+
    localhost:3000
-   

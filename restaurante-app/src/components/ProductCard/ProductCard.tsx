@@ -1,5 +1,6 @@
 import { useToast } from "../../context/ToastContext/ToastContext"; 
 import { useOrder } from "../../context/OrderContext";  
+import './ProductCard.css';
 
 interface ProductCardProps {
     id: number;

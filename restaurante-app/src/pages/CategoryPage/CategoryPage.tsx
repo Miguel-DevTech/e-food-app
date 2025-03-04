@@ -16,7 +16,7 @@ const productsData = {
             name: 'Cheeseburger', 
             description: 'Hambúrguer com cheddar e bacon.', 
             price: 'R$22,99', 
-            image: '/cheeseburguer.jpg' 
+            image: '/Cheeseburguer-2.jpg' 
         },
         {
             id: 3,
