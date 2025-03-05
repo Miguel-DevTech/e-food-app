@@ -35,34 +35,41 @@ export function OrderProvider({ children }: { children: ReactNode }) {
     // Adiciona um item ao pedido (se já existir, aumenta a quantidade)
     const addToOrder = (item: OrderItem) => {
         setOrders((prevOrders) => {
-            // Verifica se o item já existe na lista
+            // Verifica se o item já existe no pedido
             const existingItemIndex = prevOrders.findIndex(order => order.id === item.id);
 
+            let updatedOrders;
             if (existingItemIndex !== -1) {
-                // Se já existe, aumenta a quantidade
-                return prevOrders.map((order, index) => 
-                    index === existingItemIndex ? { ...order, quantity: order.quantity + 1 } : order
+                // Se o item já existe, incrementa a quantidade
+                updatedOrders = prevOrders.map((order) =>
+                    order.id === item.id ? { ...order, quantity: order.quantity + 1 } : order
                 );
+            } else {
+                // Se não existe, adiciona o item
+                updatedOrders = [...prevOrders, { ...item, quantity: 1 }];
             }
 
-            // Se não existir, adiciona ao array SEM SOBRESCREVER OS OUTROS ITENS
-            return [...prevOrders, { ...item, quantity: 1 }];
+            return updatedOrders;
         });
     };
 
     // Remove um item do pedido (caso tenha mais de um, reduz a quantidade)
     const removeFromOrder = (id: number) => {
-        setOrders((prevOrders) =>
-            prevOrders
+        setOrders((prevOrders) => {
+            const updatedOrders = prevOrders
                 .map((order) =>
                     order.id === id ? { ...order, quantity: order.quantity - 1 } : order
                 )
-                .filter((order) => order.quantity > 0)
-        );
+                .filter((order) => order.quantity > 0);
+
+            return updatedOrders;
+        });
     };
 
     // Limpa todos os pedidos
-    const clearOrder = () => setOrders([]);
+    const clearOrder = () => {
+        setOrders([]);
+    };
 
     return (
         <OrderContext.Provider value={{ orders, addToOrder, removeFromOrder, clearOrder }}>

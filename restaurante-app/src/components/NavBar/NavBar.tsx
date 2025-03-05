@@ -19,7 +19,7 @@ function Navbar() {
     
                 {/* Botão do Menu Mobile, só aparece abaixo de 768px */}
                     <button 
-                        className="navbar-toggler d-block d-lg-none" 
+                        className="navbar-toggler d-block d-lg-none text-light" 
                         type="button" 
                         onClick={toggleMenu}
                         aria-controls="navbarNav"

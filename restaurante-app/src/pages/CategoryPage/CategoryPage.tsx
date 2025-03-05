@@ -29,14 +29,14 @@ const productsData = {
 
     bebidas: [
         { 
-            id: 1,
+            id: 4,
             name: 'Coca-Cola', 
             description: 'Refrigerante gelado.', 
             price: 'R$6,99', 
             image: '/coca-cola.webp' 
         },
         {
-            id:2,
+            id: 5,
             name: 'Del Valle',
             description: 'Suco fresco da sua fruta favorita',
             price: 'R$4,00',
@@ -45,7 +45,7 @@ const productsData = {
     ],
     sobremesas: [
         { 
-            id: 1, 
+            id: 6, 
             name: 'Brownie', 
             description: 'Brownie de chocolate quente.', 
             price: 'R$9,99', 

@@ -3,6 +3,7 @@ import { useOrder } from "../../context/OrderContext";
 const OrderPage = () => {
     const { orders, removeFromOrder, clearOrder } = useOrder(); // Obtendo os pedidos
 
+    console.log('Orders:', orders)
     return (
         <div className="container my-5">
             <h1 className="text-center text-light fw-bold">Meus Pedidos</h1>
@@ -12,7 +13,7 @@ const OrderPage = () => {
             ) : (
                 <div className="row justify-content-center">
                     {orders.map((order) => (
-                        <div key={order.id} className="col-md-4">
+                        <div key={order.id} className="col-12 col-md-6 col-lg-4 mb-3"> {/* Alterei as classes */}
                             <div className="card shadow-lg rounded-4 overflow-hidden h-100">
                                 <img src={order.image} className="card-img-top" alt={order.name} style={{ height: "200px", objectFit: "cover" }} />
                                 <div className="card-body d-flex flex-column justify-content-between">
@@ -28,6 +29,7 @@ const OrderPage = () => {
                         </div>
                     ))}
                 </div>
+
             )}
 
             {orders.length > 0 && (
