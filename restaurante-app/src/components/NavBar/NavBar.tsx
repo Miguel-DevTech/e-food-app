@@ -18,16 +18,16 @@ function Navbar() {
                 </Link>
     
                 {/* Botão do Menu Mobile, só aparece abaixo de 768px */}
-                    <button 
-                        className="navbar-toggler d-block d-lg-none text-light" 
-                        type="button" 
-                        onClick={toggleMenu}
-                        aria-controls="navbarNav"
-                        aria-expanded={isMenuOpen}
-                        aria-label="Toggle navigation"
-                    >
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
+                <button 
+                    className="navbar-toggler d-block d-lg-none text-light" 
+                    type="button" 
+                    onClick={toggleMenu}
+                    aria-controls="navbarNav"
+                    aria-expanded={isMenuOpen ? 'true' : 'false'}
+                    aria-label="Toggle navigation"
+                >
+                    <span className="navbar-toggler-icon"></span>
+                </button>
     
                 {/* Links do Menu */}
                 <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`} id="navbarNav">

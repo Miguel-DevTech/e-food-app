@@ -13,7 +13,7 @@ const OrderPage = () => {
             ) : (
                 <div className="row justify-content-center">
                     {orders.map((order) => (
-                        <div key={order.id} className="col-12 col-md-6 col-lg-4 mb-3"> {/* Alterei as classes */}
+                        <div key={order.id} className="col-12 col-md-6 col-lg-4 mb-3">
                             <div className="card shadow-lg rounded-4 overflow-hidden h-100">
                                 <img src={order.image} className="card-img-top" alt={order.name} style={{ height: "200px", objectFit: "cover" }} />
                                 <div className="card-body d-flex flex-column justify-content-between">

@@ -19,6 +19,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ id, name, description, price,
     const handleAddToOrder = () => {
         addToOrder({ id, name, price, image, quantity: 1 });
         triggerToast(`${name} adicionado aos pedidos!`);
+        console.log("Botão clicado!", name)
     };
 
     const buttonText = category === "lanches" || category === "bebidas" || category === "sobremesas" ? "Adicionar aos pedidos" : "Ver mais";
@@ -32,9 +33,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ id, name, description, price,
                     <p className="card-text text-muted text-center">{description}</p>
                     <h5 className="card-title text-dark fw-semibold text-center">{price}</h5>
 
-                    {category === "lanches" || category === "bebidas" ? (
+                    {category === "lanches" || category === "bebidas" || category === "sobremesas" ? (
                         <button className="btn btn-danger mx-auto mt-auto" onClick={handleAddToOrder}>
-                            {buttonText}
+                            {buttonText} 
                         </button>
                     ) : (
                         <a href={link} className="btn btn-danger mx-auto mt-auto">{buttonText}</a>

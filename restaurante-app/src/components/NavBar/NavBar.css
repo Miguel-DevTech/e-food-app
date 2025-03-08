@@ -21,19 +21,19 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar um efeito de elevação */
 }
 
-/* Responsividade para telas muito pequenas (320px) */
-@media (max-width: 320px) {
+/* Responsividade para telas pequenas (320px - 425px) */
+@media (max-width: 425px) {
     .navbar-collapse {
         padding-top: 10px;  /* Dá um espaçamento no topo do menu */
         height: auto;
         max-height: 80vh;  /* Limita a altura do menu */
     }
 
-    /* Exibição horizontal dos itens da navbar em telas pequenas */
+    /* Exibição vertical dos itens da navbar */
     ul {
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        gap: 1rem;
         justify-content: flex-start; /* Alinha os itens no topo */
         margin-top: 10px;
     }
@@ -51,61 +51,18 @@
 
     /* Ajusta o tamanho dos botões do menu (especialmente para o "Meus Pedidos") */
     .navbar-nav .nav-link.btn {
-        font-size: 14px;  /* Reduz o tamanho da fonte */
-        padding: 6px 10px; /* Ajusta o padding */
-    }
-
-    /* Ajusta a exibição do menu quando o menu hamburguer estiver aberto */
-    .navbar-collapse {
-        padding-top: 10px;  /* Dá um espaçamento no topo do menu */
-        height: auto;
+        font-size: 15px;  /* Reduz o tamanho da fonte */
+        padding: 8px 12px; /* Ajusta o padding */
     }
 }
 
-/* Responsividade para telas pequenas (375px) */
-@media (max-width: 375px) {
-    ul {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        justify-content: flex-start;
-        margin-top: 10px;
-    }
-
-    .navbar-nav .nav-link {
-        font-size: 14px;
-        padding: 8px 12px;
-    }
-}
-
-/* Responsividade para telas pequenas (425px) */
-@media (max-width: 425px) {
-    ul {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        justify-content: flex-start;
-        margin-top: 10px;
-    }
-
-    .navbar-nav .nav-link {
-        font-size: 14px;
-        padding: 8px 12px;
-    }
-
-    /* Ajustar o botão "Meus Pedidos" para o tamanho adequado */
-    .navbar-nav .nav-link.btn {
-        font-size: 15px;
-        padding: 8px 12px;
-    }
-}
-
-/* Responsividade para telas maiores que 768px (tablets) */
+/* Responsividade para telas médias (768px) */
 @media (min-width: 768px) {
     .navbar-nav {
         display: flex;
         flex-direction: row;
         justify-content: center; /* Alinha os itens da navbar ao centro */
+        align-items: center; /* Centraliza verticalmente os itens */
     }
 
     .navbar-toggler {

@@ -34,6 +34,7 @@ export function OrderProvider({ children }: { children: ReactNode }) {
 
     // Adiciona um item ao pedido (se já existir, aumenta a quantidade)
     const addToOrder = (item: OrderItem) => {
+        console.log(item);
         setOrders((prevOrders) => {
             // Verifica se o item já existe no pedido
             const existingItemIndex = prevOrders.findIndex(order => order.id === item.id);
@@ -48,7 +49,7 @@ export function OrderProvider({ children }: { children: ReactNode }) {
                 // Se não existe, adiciona o item
                 updatedOrders = [...prevOrders, { ...item, quantity: 1 }];
             }
-
+            
             return updatedOrders;
         });
     };
@@ -77,3 +78,5 @@ export function OrderProvider({ children }: { children: ReactNode }) {
         </OrderContext.Provider>
     );
 }
+
+console.log(name);

@@ -18,3 +18,10 @@
 .card .btn {
     width: 100%;
 }
+
+@media (max-width: 426px) {
+    .card {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
