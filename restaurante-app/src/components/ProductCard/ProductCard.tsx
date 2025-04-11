@@ -26,7 +26,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ id, name, description, price,
 
     return (
         <div className="col" key={id}>
-            <div className="card d-flex flex-column shadow-lg rounded-4 overflow-hidden h-100">
+            <div className="card d-flex flex-column shadow-lg rounded-4 overflow-hidden">
                 <img src={image} className="card-img-top" alt={name} style={{ height: "200px", objectFit: "cover" }} />
                 <div className="card-body d-flex flex-column justify-content-between">
                     <h5 className="card-title text-dark fw-semibold text-center">{name}</h5>

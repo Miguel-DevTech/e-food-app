@@ -11,10 +11,14 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
     background-image: url(./images/pngtree-3d-illustration-of-online-food-delivery-app-on-mobile-device-picture-image_5809789.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     font-family: Arial, Helvetica, sans-serif;
-    margin-top: 7rem;
+    overflow-x: hidden;
+    height: 100%;
+    padding-top: 40px;
 }
+

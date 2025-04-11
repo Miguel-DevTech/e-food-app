@@ -6,7 +6,7 @@ const productsData = {
     lanches: [
         { 
             id: 1,
-            name: 'Hambúrguer Clássico', 
+            name: 'Hambúrguer', 
             description: 'Carne suculenta com queijo e alface.', 
             price: 'R$19,99', 
             image: '/hamburguer.webp' 
@@ -67,7 +67,8 @@ function CategoryPage() {
     }
 
     return (
-        <div className="container my-5">
+        <main>
+            <div className="container my-10">
             <h1 className="text-center text-light fw-bold">
                 {categoryKey.charAt(0).toUpperCase() + categoryKey.slice(1)}
             </h1>
@@ -86,6 +87,7 @@ function CategoryPage() {
                 ))}
             </div>
         </div>
+        </main>
     );
 }
 

@@ -25,3 +25,9 @@
         margin: 0 auto;
     }
 }
+
+@media (max-width: 768) {
+    .card {
+        height: 80px;
+    }
+}

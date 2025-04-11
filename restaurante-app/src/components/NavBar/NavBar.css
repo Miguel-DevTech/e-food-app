@@ -22,7 +22,7 @@
 }
 
 /* Responsividade para telas pequenas (320px - 425px) */
-@media (max-width: 425px) {
+@media (max-width: 426px) {
     .navbar-collapse {
         padding-top: 10px;  /* Dá um espaçamento no topo do menu */
         height: auto;
@@ -53,6 +53,25 @@
     .navbar-nav .nav-link.btn {
         font-size: 15px;  /* Reduz o tamanho da fonte */
         padding: 8px 12px; /* Ajusta o padding */
+    }
+}
+
+@media (min-width: 427px) and (max-width: 767px) {
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Agora o gap funciona */
+        align-items: flex-start; /* Ou center, se preferir */
+        padding-left: 0;
+    }
+
+    .navbar-nav li {
+        width: 100%;
+    }
+
+    .navbar-nav .nav-link.btn {
+        width: 100%;
+        text-align: center;
     }
 }
 

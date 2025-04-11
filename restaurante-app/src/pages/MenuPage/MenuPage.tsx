@@ -36,9 +36,9 @@ const MenuPage: React.FC = () => {
     };
 
     return (
-        <section className="container my-5">
+        <section className="container mt-5">
             <h1 className="text-center text-light fw-bold">Cardápio</h1>
-            <table className="table table-striped table-hover mt-4">
+            <table className="table table-striped table-hover ">
                 <thead className="table-dark">
                     <tr>
                         <th>Imagem</th>
