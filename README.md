@@ -1,51 +1,60 @@
-# E-Food App 
+# E-Food🍔
 
-#### Acesse o projeto online: https://e-food-app-one.vercel.app
+🎯 Acesse o projeto: [https://e-food-app-one.vercel.app/](https://e-food-app-one.vercel.app)  
 
 ## Descrição
 
-O **E-Food** é um aplicativo de pedidos de comida online, desenvolvido com **React**, **TypeScript** e **Bootstrap**. O objetivo do projeto foi aprender como utilizar o React em aplicações do "mundo real", criando uma interface intuitiva e acessível. O aplicativo permite que os usuários naveguem por diferentes categorias de alimentos (como lanches, bebidas e sobremesas), visualizem os itens de cada categoria, adicionem itens ao pedido e acompanhem seus pedidos.
+E-Food é um aplicativo de pedidos de comida online desenvolvido com React, TypeScript e Bootstrap. O principal objetivo do projeto foi aplicar conhecimentos de React em um cenário próximo ao do mundo real, focando na construção de uma interface moderna, intuitiva e acessível.
 
-## Funcionalidades
+## Funcionalidades ✅
 
-- **NavBar**: Navegação entre as páginas do app.
-- **Página Principal**: Exibe os **Cards de categorias** como Lanches, Bebidas, Sobremesas, etc.
-- **Página de Itens por Categoria**: Apresenta os itens específicos de cada categoria.
-- **Adição ao Pedido**: Botões para adicionar itens ao carrinho/pedido.
-- **Meus Pedidos**: Página para visualizar os pedidos realizados.
-- **Cardápio**: Detalha os ingredientes de cada lanche ou item do menu.
+- Navegação por diferentes categorias de alimentos (como lanches, bebidas e sobremesas);
+- Visualização de cada produto de cada categoria com imagens, descrições e preços;
+- Adicionar e/ou remover itens ao pedido de forma simples e rápida.
 
-## Tecnologias Usadas
+### ⚠️NOTA
+- ### Este projeto está em constante desenvolvimento e pode passar por alterações ao longo do tempo. Novas funcionalidades, correções e melhorias poderão ser implementadas conforme a evolução do projeto.
+  
+## 🛠️ Tecnologias Usadas
 
-- **React**: Biblioteca para construção da interface do usuário.
-- **TypeScript**: Linguagem para tipagem estática e maior segurança no código.
-- **Bootstrap**: Framework CSS para responsividade e estilo.
-- **React Router**: Para navegação entre as páginas do app.
+| Tecnologia       | Finalidade                                         |
+|------------------|----------------------------------------------------|
+| React + TypeScript | Interface e tipagem estática                      |
+| Bootstrap 5       | Estilização e responsividade                      |
+| React Router      | Navegação entre rotas públicas e privadas         |
 
-## Instalação e Execução
 
-Para rodar o projeto localmente, siga os passos abaixo:
+## 🚀 Instalação e Execução
 
-1. Clone o repositório:
+Para rodar o projeto localmente:
 
-   ```bash
-   git clone https://github.com/Miguel-DevTech/e-food-app.git
+```bash
+# Clone o repositório
+git clone https://github.com/Miguel-DevTech/e-food-app/
 
-2. Navegue até a pasta do projeto:
+# Acesse o diretório
+cd e-food-app
 
-   ```bash
-   cd restaurante-app
-   
-3. Instale as dependências do projeto:
+# Instale as dependências
+npm install
 
-   ```bash
-   npm install
+# Inicie o projeto
+npm run dev
 
-4. Execute o aplicativo:'
+```
+## 🧠 Aprendizados
 
-   ```bash
-   npm run dev
+Durante o desenvolvimento deste projeto, aprimorei:
 
-5. Abra o navegador e acesse:
+- Componentização;
+- Gerenciamento de estado e hooks no React;
+- Tipagem de código e escalabilidade com TypeScript;
+- Estilização rápida e responsiva com Bootstrap.
 
-   localhost:3000
+## 📞 Contato
+
+Se quiser trocar uma ideia ou me dar um feedback:
+
+- 💼 [LinkedIn](https://www.linkedin.com/in/miguel-nogueira-de-amorim/)
+- 💻 [GitHub](https://github.com/Miguel-DevTech/)
+- 📧 miguelnogueiraneto@gmail.com
